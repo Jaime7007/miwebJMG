@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sobre Nosotros | Mundo Motos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Quiénes somos en Mundo Motos. Pasión, excelencia y comunidad sobre dos ruedas.">
+    <meta property="og:title" content="Sobre Nosotros | Mundo Motos">
+    <meta property="og:description" content="Pasión y excelencia sobre dos ruedas. Descubre Mundo Motos y nuestro equipo.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://soymotero.net/wp-content/uploads/2018/09/kawasaki-h2-carbon-01.jpg">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:700,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilosabout.css">
+</head>
+<body>
+    <header>
+        <h1>Mundo Motos</h1>
+        <p>Descubre la historia y el corazón de nuestra marca</p>
+    </header>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="about.html" class="active" aria-current="page">Sobre Nosotros</a>
+        <a href="contact.html">Contacto</a>
+    </nav>
+    <main>
+        <section class="about-section scroll-animate">
+            <h2 class="about-title">Quiénes Somos</h2>
+            <div class="about-block">
+                <img src="https://soymotero.net/wp-content/uploads/2018/09/kawasaki-h2-carbon-01.jpg" alt="Historia Mundo Motos">
+                <p>
+                    En <b>Mundo Motos</b> compartimos la pasión por las dos ruedas, la innovación constante y el objetivo de acercar la mejor experiencia motera a todos los públicos.<br>
+                    Nuestro compromiso es ofrecer una plataforma fiable, elegante y dinámica para los amantes de las motos, uniendo comunidad y tecnología tal y como lo exige el mundo actual.
+                </p>
+            </div>
+            <div class="about-block">
+                <p>
+                    Creemos en la excelencia, la atención personalizada y la conexión real. Ya sea a través de nuestra tienda, eventos o comunidad online, queremos que tu pasión por el motociclismo supere cualquier límite.<br>
+                    La personalidad y fuerza de Mundo Motos está inspirada en la leyenda de la <b>Kawasaki Ninja H2R</b>: avanzada, exclusiva, creada para hacer historia.
+                </p>
+            </div>
+            <div class="about-team">
+                <h3 class="about-title" style="font-size:1.45em;">Equipo</h3>
+                <div class="team-member scroll-animate">
+                    <img class="team-avatar" 
+                        src="https://soymotero.net/wp-content/uploads/2018/09/kawasaki-h2-carbon-01.jpg" 
+                        alt="Moto más rápida - Kawasaki Ninja H2R">
+                    <h4>Jaime Martínez Guzmán</h4>
+                    <p>Fundador y CEO <br/> Apasionado por las motos, la excelencia y la experiencia de usuario</p>
+                    <div class="team-links">
+                        <a href="mailto:jaime.martinez@mundo-motos.com">Email</a>
+                        <a href="https://wa.me/34600000000" target="_blank">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <b>Mundo Motos</b> · Excelencia sobre dos ruedas · España<br>
+        Copyright © <span id="year"></span>. Todos los derechos reservados.
+    </footer>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        // Scroll reveal animación en blocks
+        function scrollReveal() {
+            document.querySelectorAll('.scroll-animate').forEach(el=>{
+                let rect=el.getBoundingClientRect();
+                if(rect.top < window.innerHeight - 120){
+                    el.classList.add('visible');
+                } else {
+                    el.classList.remove('visible');
+                }
+            });
+        }
+        window.addEventListener('scroll', scrollReveal);
+        window.addEventListener('load', scrollReveal);
+    </script>
+</body>
+</html>

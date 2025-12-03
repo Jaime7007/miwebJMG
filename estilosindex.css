@@ -1,0 +1,199 @@
+html { scroll-behavior:smooth; }
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background: linear-gradient(145deg, #00041d 0%, #1d113a 43%, #3a1759 60%, #e65c00 100%);
+    min-height: 100vh;
+    color: #fff;
+    margin:0;
+    padding:0;
+    overflow-x: hidden;
+}
+#hero-bg {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 130vh;
+    pointer-events: none;
+    z-index: 0;
+    background: radial-gradient(ellipse at 65% 22%,rgba(255,242,58,.07) 0,rgba(255,242,58,0) 70%), radial-gradient(ellipse at 15% 88%,rgba(230,92,0,.10) 0,rgba(230,92,0,0) 70%);
+    opacity: .5;
+    transition: background-position .4s cubic-bezier(.2,.65,.5,1), opacity .7s;
+}
+header {
+    padding: 3.2em 1em 1em 1em;
+    text-align:center;
+    background: rgba(0,0,0,0.52);
+    backdrop-filter: blur(3px);
+    animation: fadeInUp .8s cubic-bezier(.23,.77,.11,1);
+}
+header h1 {
+    font-size: 2.8em;
+    color: #fff23a;
+    letter-spacing: 0.14em;
+    text-shadow: 2.5px 2.5px 24px #e65c00b0, 0 1px 1px #fff;
+    position: relative;
+}
+header h1::after {
+    content:'';
+    display:block;
+    height:3px;
+    width:100%;
+    background:linear-gradient(90deg,#fff23a 35%,#e65c00 99%);
+    border-radius:3px;
+    opacity:.7;
+    animation: fadeUnderline 1.08s 0.13s backwards;
+    margin-top:8px;
+}
+header p {
+    font-size: 1.24em;
+    color: #c9c9c9;
+}
+nav {
+    text-align:center;
+    margin-top:.1em;
+    background:transparent;
+    animation: fadeInUp 0.7s .1s cubic-bezier(.23,.77,.11,1);
+}
+nav a {
+    display:inline-block;
+    color: #fff;
+    font-weight: 700;
+    margin: 0 1.15em;
+    text-decoration: none;
+    font-size: 1.13em;
+    position: relative;
+    padding: 0.6em 0.7em 0.4em 0.7em;
+    border-radius: 6px;
+    transition: color .2s, background .2s, box-shadow .18s, transform .16s;
+}
+nav a.active, nav a:hover {
+    color:#fff23a;
+    background: #e65c0019;
+    box-shadow:0 2px 18px #fff23abb,0 0 10px #e65c0066 inset;
+    transform: scale(1.08) translateY(-1px)!important;
+}
+main {
+    min-height:68vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+}
+.glass {
+    margin-top: 2.7em;
+    margin-bottom: 3.1em;
+    background:rgba(36,32,63, 0.51);
+    border-radius:32px;
+    box-shadow:0 10px 61px #17005591, 0 1.5px 30px #fff23a18 inset;
+    padding: 3.2em 2.5em 2.3em 2.5em;
+    max-width:730px;
+    width:100%;
+    position:relative;
+    overflow: hidden;
+    animation: glassGlow 8s infinite alternate, fadeInUp .9s cubic-bezier(.23,.77,.11,1);
+}
+@keyframes glassGlow {0% { box-shadow:0 10px 61px #17005591, 0 1.5px 30px #fff23a18 inset; }
+100% { box-shadow:0 16px 68px #fff23a90, 0 1.5px 80px #e65c0030 inset; }}
+@keyframes fadeInUp {0%{opacity:0;transform:translateY(44px) scale(.95);}100%{opacity:1;transform:none;}}
+@keyframes fadeUnderline {0%{width:0;}100%{width:100%;} }
+.scroll-animate {opacity:0;transform:translateY(40px);transition:.77s cubic-bezier(.21,.6,.25,1);}
+.scroll-animate.visible {opacity:1;transform:none;}
+h2 {
+    color: #fff23a;
+    margin-top: 0;
+    text-shadow: 1px 1px 8px #3b1c8e;
+    position: relative;
+}
+h2::after {
+    content:'';
+    display:block;
+    height:3px;
+    width:100%;
+    background:linear-gradient(90deg,#fff23a 35%,#e65c00 99%);
+    border-radius:3px;
+    opacity:.75;
+    animation: fadeUnderline 1.09s 0.19s backwards;
+    margin-top:7px;
+}
+.category-block {
+    background: rgba(24, 18, 40, 0.24);
+    border-radius: 18px;
+    box-shadow: 0 0 24px #17005555;
+    padding: 1.7em 2em;
+    margin-bottom:2.1em;
+    margin-top:1.05em;
+    animation: glassGlow 8s infinite alternate, fadeInUp .7s .09s cubic-bezier(.23,.77,.11,1);
+}
+.category-block p {font-size:1.13em; line-height:1.55;}
+.moto-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: center;
+    margin-top: 2.5em;
+    margin-bottom: 1em;
+    position:relative;
+}
+.moto-gallery img {
+    width: 240px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 11px;
+    box-shadow: 0 8px 32px #e65c0050;
+    transition: box-shadow .21s,transform .22s,filter .19s;
+    background: #fff4;
+    position:relative;
+    z-index:2;
+}
+.moto-gallery img:hover {
+    filter: brightness(1.17) saturate(1.10);
+    box-shadow:0 16px 78px #fff23a99,0 0 40px #e65c00d3 inset;
+    transform: scale(1.11) rotate(-1.5deg);
+    z-index:3;
+}
+ul {padding-left: 2.4em;}
+.btn-wa-fixed {
+    display:block; position:fixed; z-index:30;
+    right:2vw; bottom:2vw; 
+    background:linear-gradient(135deg,#25D366 85%,#fff23ad4 120%);
+    color:#fff;
+    width:62px; height:62px;
+    border-radius:50%; box-shadow:0 2px 32px #25d36678,0 4px 8px #fff23a31;
+    font-size:2.15em; 
+    display:flex; align-items:center; justify-content:center;
+    border:none; outline:none;
+    align-items: center; justify-content: center;
+    animation:bounceInWA 1.37s cubic-bezier(.51,1.49,.3,1) 1;
+    transition: box-shadow .2s, background .2s, transform .17s;
+}
+.btn-wa-fixed svg{
+    width: 36px;
+    height: 36px;
+    display:block;
+    margin:auto;
+    vertical-align:middle;
+}
+.btn-wa-fixed:hover {background:linear-gradient(135deg,#25D366 25%,#fff23a 119%);color:#fffde3;box-shadow:0 0 0 10px #25d36644,0 4px 32px #25d366a0;transform:scale(1.08);}
+@keyframes bounceInWA{0%{opacity:0;transform:scale(.3);}
+67%{opacity:1;transform:scale(1.09);}
+100%{opacity:1;transform:scale(1);}}
+footer {
+    margin-top:2.2em;
+    text-align:center;
+    color:#fff;
+    font-size:1.09em;
+    font-weight: 400;
+    padding:2.4em 0 1.7em 0;
+    background:none;
+    letter-spacing:0.09em;
+    text-shadow:0 0 6px #17005540;
+    transition: filter .6s;
+    filter:brightness(1) drop-shadow(0 2px 2px #e65c0025);
+    animation: footerShine 8s infinite alternate;
+}
+@keyframes footerShine {0% {filter:brightness(1);} 100%{filter:brightness(1.06);}}
+footer b { color: #fff23a;}
+@media (max-width: 900px) {
+    .glass {max-width:97vw;padding:1em 0.5em;}
+    nav a {margin: 0 0.52em;}
+    .moto-gallery img{width:95vw;max-width:330px;}
+}
